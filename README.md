@@ -27,9 +27,8 @@ try{
 - An `Error` base class with a message, a prefix and the traceback from where it was created
 - Subclass `Error` for your own kinds of error, and tell them apart with `isa()`
 - The same module the other DMC libraries use for their errors (dmc-websockets, dmc-wamp, dmc-autostore)
+- `finally` runs in every case; a `try` without a `catch` passes the error on
 - Pure Lua, no plugins needed; MIT licensed
-
-`finally` has bugs: it doesn't run on success unless there is a `catch`, and it doesn't run when the `catch` raises an error. See lua-error's [Known Issues](https://github.com/dmccuskey/lua-error/blob/master/docs/api.md#known-issues).
 
 ## Quick Start
 
@@ -140,6 +139,7 @@ To update, copy `dmc_corona_boot.lua` and `dmc_corona/` again from the newer ver
 
 - [lua-error API reference](https://github.com/dmccuskey/lua-error/blob/master/docs/api.md): `try`, `catch`, `finally`, the `Error` class, subclasses, known issues
 - [Configuration](docs/README.md#configuration): dmc-error has no settings of its own
+- [Changelog](CHANGELOG.md)
 
 Everything else is listed on the [documentation home](docs/README.md).
 
